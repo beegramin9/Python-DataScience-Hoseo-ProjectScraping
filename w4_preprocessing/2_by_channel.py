@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 
 res = requests.get('https://tv.naver.com/r')
 raw = res.text
-html = BeautifulSoup(raw,'html.parser')
+html = BeautifulSoup(raw, 'html.parser')
 
 clips = html.select('dl.cds_info')
 
@@ -18,14 +18,14 @@ info = {}
 
 for clip in clips:
     chn = clip.select_one('dd.chn').text.strip()
-    info[chn] = {'hit':0,'like':0}
+    info[chn] = {'hit': 0, 'like': 0}
 
 for clip in clips:
     chn = clip.select_one('dd.chn').text.strip()
-    hit = int(clip.select_one('span.like').text.replace(',','')[5:])
-    like = int(clip.select_one('span.hit').text.replace(',','')[6:])
+    hit = int(clip.select_one('span.like').text.replace(',', '')[5:])
+    like = int(clip.select_one('span.hit').text.replace(',', '')[6:])
 
     info[chn]['hit'] += hit
     info[chn]['like'] += like
 
-print(info)
+print(len(clips))

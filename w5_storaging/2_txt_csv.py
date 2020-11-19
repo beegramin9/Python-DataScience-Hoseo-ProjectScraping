@@ -24,14 +24,14 @@ for clip in clips:
 def sort_by_score(item):
     return item[1]['score']
 
-f = open('2_txt.txt','w')
+f = open('2_txt.txt','w',encoding='utf8')
 for arg in sorted(info.items() , key = sort_by_score , reverse=True):
     f.write(arg[0]+
         str(arg[1]['hit'])+','+str(arg[1]['like'])+','+str(arg[1]['score'])+'\n')
 
 f.close()
 
-f = open('2_csv.csv','w')
+f = open('2_csv.csv','w',encoding='utf8')
 for arg in sorted(info.items() , key = sort_by_score , reverse=True):
     f.write(arg[0]+
         str(arg[1]['hit'])+','+str(arg[1]['like'])+','+str(arg[1]['score'])+'\n')
