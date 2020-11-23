@@ -16,7 +16,6 @@ pyperclip.copy('spald1ng')
 id_login.send_keys(Keys.CONTROL, 'v')
 driver.implicitly_wait(1)
 
-
 id_login = driver.find_element_by_id('pw')
 id_login.clear()
 pyperclip.copy('wtchoe13')
